@@ -12,9 +12,13 @@ class DataIngestionConfig:
     test_data_path: str = os.path.join('artifacts', "test.csv")
     raw_data_path: str = os.path.join('artifacts', "data.csv")
 
+    # This defines a configuration class using the @dataclass decorator. It specifies the paths where the train, 
+    # test, and raw data will be saved.
+
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
+        # This class initializes the data ingestion process. The constructor creates an instance of DataIngestionConfig.
 
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
@@ -40,6 +44,15 @@ class DataIngestion:
             )
         except Exception as e:
             raise CustomException(e, sys)
+# This method does the actual data ingestion:
+
+# It reads a CSV file into a pandas DataFrame.
+# Creates the 'artifacts' directory if it doesn't exist.
+# Saves the raw data to a CSV file.
+# Splits the data into training and testing sets.
+# Saves the training and testing data to separate CSV files.
+# Returns the paths of the training and testing data files.
+# If any exception occurs, it raises a CustomException.
 
 if __name__ == "__main__":
     obj = DataIngestion()
