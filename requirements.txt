@@ -1,4 +1,11 @@
 pandas
 numpy
 seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
 -e .
+# whenever we make changes in the file and install new packages , we comment the
+#  above line thus we dont create package everytime we run this command , thus we can do this in the last of the
+# the project

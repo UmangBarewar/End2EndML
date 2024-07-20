@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 # this sys library helps in manipulating python runtime environemnt
 # so all the exception error will be handled here
 
